@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>GitReview</AssemblyName>
+    <RootNamespace>GitReview</RootNamespace>
+    <ApplicationIcon>tools\GitReview.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <Version>1.0.0</Version>
+    <Product>GitReview</Product>
+    <Description>Lightweight local git code review tool</Description>
+  </PropertyGroup>
+
+  <!-- Published as a single framework-dependent EXE (~0.8 MB).
+       Self-contained would be ~61 MB: WPF cannot be trimmed, and the staging
+       mechanism copies the EXE off the share on every update, so size matters here.
+       Each machine needs the .NET 10 Desktop Runtime (x64). -->
+  <PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishReadyToRun>false</PublishReadyToRun>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Window and shortcut icon; Taskbar.OpenIconStream looks it up by this name. -->
+    <EmbeddedResource Include="tools\GitReview.ico" LogicalName="GitReview.ico" />
+  </ItemGroup>
+
+</Project>

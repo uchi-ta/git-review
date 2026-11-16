@@ -1,0 +1,4 @@
+LIBRARY GitReviewShell
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE
